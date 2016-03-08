@@ -73,7 +73,7 @@
 							<a title="Breyta" href="/admin/{{ strtolower($item->modelName()) }}/{{ $item->id }}/edit" class="uk-button-link uk-margin-small-right"><i class="uk-icon-edit"></i></a>
 
 							@if(!$item->disable_parent_listing && $item->hasSubs())
-								<a title="Undirflokkar" href="/admin/{{ strtolower($item->modelName()) }}/subs/{{ $item->id }}" class="uk-button uk-button-primary uk-button-mini uk-margin-small-right">
+								<a title="Undirflokkar" href="/admin/{{ strtolower($item->modelName()) }}/{{ $item->id }}/subs" class="uk-button uk-button-primary uk-button-mini uk-margin-small-right">
 									<i class="uk-icon-pagelines"></i> {{ $item->getSubCount() }}
 								</a>
 							@endif
