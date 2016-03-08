@@ -533,11 +533,45 @@ header {
 	article {
 		margin: 0 auto;
 		max-width: $max-width2;
+
 		header {
 			h1 {
 				color: $green2 !important;
 				padding: 0;
 				margin: 0;
+			}
+		}
+
+		figure {
+			width: 100%;
+			display: block;
+
+			&.righter, &.lefter {
+				max-width: 50%;
+
+				img {
+					width: 100%;
+				}
+
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+
+				@media (max-width: 479px) {
+					position: relative;
+					margin-top: 0;
+					max-width: 100%;
+					width: 100%;
+				}
+			}
+
+			&.righter {
+				float: right;
+				margin-left: 2rem;
+			}
+
+			&.lefter {
+				float: left;
+				margin-right: 2rem;
 			}
 		}
 	}

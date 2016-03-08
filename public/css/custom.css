@@ -452,6 +452,27 @@ header {
       color: #33956B !important;
       padding: 0;
       margin: 0; }
+    .page article figure {
+      width: 100%;
+      display: block; }
+      .page article figure.righter, .page article figure.lefter {
+        max-width: 50%;
+        margin-top: 1rem;
+        margin-bottom: 1rem; }
+        .page article figure.righter img, .page article figure.lefter img {
+          width: 100%; }
+        @media (max-width: 479px) {
+          .page article figure.righter, .page article figure.lefter {
+            position: relative;
+            margin-top: 0;
+            max-width: 100%;
+            width: 100%; } }
+      .page article figure.righter {
+        float: right;
+        margin-left: 2rem; }
+      .page article figure.lefter {
+        float: left;
+        margin-right: 2rem; }
 
 .content {
   min-height: 700px;
