@@ -6,7 +6,9 @@
         <div class="page"> 
             <div class="page-content">
                 <article>
-                    <h1>Innskráning</h1>
+                    <header>
+                        <h1>Innskráning</h1>
+                    </header>
                     <form class="Basic" method="POST" action="{{ url('/auth/login') }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
