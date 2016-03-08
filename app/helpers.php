@@ -550,9 +550,36 @@ function makeAccordion($item) {
 }
 
 
+
+
+
+function addSlider($item) {
+    if(strpos($item->content, '!myndir') == false) return $item->content;
+    
+    if($item->img()->exists()) {
+        $html = '<div class="myndir uk-margin-large-top uk-margin-large-bottom">';
+
+            $html .= '<div class="uk-grid" data-uk-grid-margin data-uk-grid-watch="{target:\'.myndir-mynd\'}">';
+
+            foreach($item->img()->all() as $img) {
+                $html .= '<div class="uk-width-medium-1-3 uk-flex uk-flex-middle uk-flex-center"><div class="myndir-mynd uk-height-1-1 uk-flex uk-flex-middle uk-flex-center"><a data-uk-lightbox href="/imagecache/original/'.$img['name'].'"><img src="/imagecache/medium/'.$img['name'].'" /></a></div></div>';
+            }
+
+            $html .= '</div>';
+
+        $html .= '</div><div class="uk-clearfix"></div>';
+    }
+
+    $ret = str_replace('!myndir', $html, $item->content);
+
+    return $ret;
+}
+
+
+
 function cmsContent($item) {
     $item->content = filterImages($item);
-    $content = makeAccordion($item);
+    $content = addSlider($item);
     return $content;
 }
 

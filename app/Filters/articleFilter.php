@@ -7,7 +7,8 @@ class articleFilter implements FilterInterface
 {
     public function applyFilter(Image $image)
     {
-		return $image->resize(1130, null, function ($constraint) {
+		return $image->resize(1000, null, function ($constraint) {
+			$constraint->upsize();
 		    $constraint->aspectRatio();
 		});
     }
