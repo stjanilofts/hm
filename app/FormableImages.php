@@ -80,12 +80,16 @@ class FormableImages
 
     public function nr($nr = 1)
     {
-        if($nr >= 1) {
-            $idx = $nr - 1;
-            return array_key_exists($idx, $this->images) ? $this->images[$idx]['name'] : 'spurningamerki.jpg';
+        if($this->images) {
+            if($nr >= 1) {
+                $idx = $nr - 1;
+                return array_key_exists($idx, $this->images) ? $this->images[$idx]['name'] : 'spurningamerki.jpg';
+            }
+
+            return $this->first();
         }
 
-        return $this->first();
+        return 'spurningamerki.jpg';
     }
 
     public function exists() {
