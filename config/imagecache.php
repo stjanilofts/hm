@@ -62,6 +62,7 @@ return array(
         'kubbur' => 'App\Filters\kubburFilter',
         'facebook' => 'App\Filters\facebookFilter',
         'article' => 'App\Filters\articleFilter',
+        'profile' => 'App\Filters\profileFilter',
         'logo' => 'App\Filters\logoFilter',
         'menuitem' => 'App\Filters\menuitemFilter',
         'boximage' => 'App\Filters\boximageFilter',
