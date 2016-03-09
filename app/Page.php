@@ -92,6 +92,11 @@ class Page extends Formable
             'type' => 'text',
             'name' => 'title'
         ],
+        [
+            'title' => 'Undirtitill',
+            'type' => 'text',
+            'name' => 'subtitle'
+        ],
         /*[
             'title' => 'Birta í "accordion" í efni foreldris',
             'type' => 'checkbox',

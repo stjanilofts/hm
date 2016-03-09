@@ -15,8 +15,10 @@ Route::get('borgun', function() {
 
 
 Route::get('vorur', 'VorukerfiController@index');
-
 Route::get('vorur/{slug?}', 'VorukerfiController@show')->where(['slug' => '.*']);
+
+/*Route::get('um-okkur/starfsfolk', 'StaffController@index');
+Route::get('um-okkur/starfsfolk/{slug?}', 'StaffController@show')->where(['slug' => '.*']);*/
 
 Route::get('/', 'HomeController@home');
 
@@ -27,10 +29,6 @@ Route::get('/', 'HomeController@home');
         'password' => bcrypt('ovm74n2bd'),
         'remember_token' => str_random(10),
     ]);
-});*/
-
-/*Route::get('vorur2', function() {
-    return 'what';
 });*/
 
 Route::post('hafa-samband', 'ContactController@postContact');
