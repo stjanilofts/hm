@@ -198,7 +198,7 @@ a {
       padding: 0;
       margin: 0;
       list-style: none; }
-    .overlay-menu .overlay-menu-ul li.being_viewed a {
+    .overlay-menu .overlay-menu-ul li.active > a {
       color: #33956B; }
     .overlay-menu .overlay-menu-ul li a {
       color: #231f20;

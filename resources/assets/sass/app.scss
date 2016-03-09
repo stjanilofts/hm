@@ -228,8 +228,8 @@ a {
 		}
 
 		li {
-			&.being_viewed {
-				a {
+			&.active {
+				> a {
 					color: $green2;
 				}
 			}
