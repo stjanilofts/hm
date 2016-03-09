@@ -440,6 +440,13 @@ header {
             color: #646464; }
         .page .submenu ul li.active a {
           color: #33956B; }
+        .page .submenu ul li ul {
+          padding-left: 1rem;
+          padding-top: 0.5rem; }
+          .page .submenu ul li ul li a {
+            font-weight: 300 !important;
+            font-size: 0.8rem;
+            line-height: 1rem; }
     .page .submenu a {
       display: block;
       /*border-bottom: 1px solid rgba($grey1, 0.25);*/

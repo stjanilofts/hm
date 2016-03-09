@@ -911,7 +911,7 @@ function renderSitemap($items = false, $args = []) {
 
 function kalMenuBasicFrom($slug = '') {
     $page = App\Page::where('slug', $slug)->first();
-    return kalMenuBasic($page->id, $lvl = 1, true);
+    return kalMenuBasic($page->id, $lvl = 1);
 }
 
 function kalMenuBasic($parent_id = 0, $lvl = 0, $all = false) {
@@ -950,9 +950,9 @@ function kalMenuBasic($parent_id = 0, $lvl = 0, $all = false) {
 
         $output .= '<li class="'.$class.'"><a href="/'.$fullpath.'"><span>'.$cat->title.'</span></a>';
 
-        if($all || ($isActive && $cat->getSubs())) {
+        if($all || ($isActive && $cat->hasSubs())) {
             $lvl++;
-            kalMenuBasic($cat->id, $lvl, true);
+            $output .= kalMenuBasic($cat->id, $lvl, $all);
             $lvl--;
         }
 
