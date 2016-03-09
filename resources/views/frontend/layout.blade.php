@@ -13,9 +13,9 @@
         <meta id="token" name="token" value="{{ csrf_token() }}">
         
         <!--<link href="{{ elixir('css/custom.css') }}" rel='stylesheet' type='text/css'>-->
-        <link href="/css/custom.css" rel='stylesheet' type='text/css'>
+        <link href="/css/custom.css?v=2" rel='stylesheet' type='text/css'>
         <!--<script src="{{ elixir('js/top.js') }}"></script>-->
-        <script src="/js/top.js"></script>
+        <script src="/js/top.js?v=2"></script>
 
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
@@ -186,7 +186,7 @@
         </footer>
 
         <!--<script src="{{ elixir('js/custom.js') }}"></script>-->
-        <script src="/js/custom.js"></script>
+        <script src="/js/custom.js?v=2"></script>
 
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
