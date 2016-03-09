@@ -76,6 +76,7 @@ class PageController extends ItemableController
 
         $item->accordion = $request->get('accordion') ? 1 : 0;
         $item->topmenu = $request->get('topmenu') ? 1 : 0;
+        $item->menu = $request->get('menu') ? 1 : 0;
 
         if(trim($item->slug)=='') $item->slug = str_slug($item->title);
         
@@ -93,6 +94,8 @@ class PageController extends ItemableController
         $item = $this->currentModel->create($request->all());
         
         $item->translations = '';
+
+        $item->menu = $request->get('menu') ? 1 : 0;
 
         $this->defaultUpdate($request, $item);
 

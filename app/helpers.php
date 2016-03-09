@@ -956,10 +956,7 @@ function kalMenuBasic($options = [], $parent_id = 0, $lvl = 1) {
 
         $output .= '<li class="'.$class.'"><a href="/'.$fullpath.'"><span>'.$cat->title.'</span></a>';
 
-        /*echo $lvl.' '.$opts['max_lvl'].'<br>';
-        echo ($opts['max_lvl'] && $lvl <= $opts['max_lvl']) ? 'true' : 'false'.'<br>';*/
-
-        if(($opts['max_lvl'] && $lvl <= $opts['max_lvl']) && ($isActive && $cat->hasSubs())) {
+        if($cat['menu'] && ($opts['max_lvl'] && $lvl <= $opts['max_lvl']) && ($isActive && $cat->hasSubs())) {
             $lvl++;
             $output .= kalMenuBasic($opts, $cat->id, $lvl);
             $lvl--;

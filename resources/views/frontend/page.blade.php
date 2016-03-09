@@ -22,23 +22,29 @@
 
 			<div class="{{ $menuActive ? 'page-with-menu-content' : 'page-content' }}">
 				@if(\Request::is('um-okkur/starfsfolk'))
-					<?php
+					<article>
+						<header>
+							<h1>{{ $page->title }}</h1>
+						</header>
+						
+						<?php
 
-					$employees = \App\Page::where('slug', 'starfsfolk')->first()->getSubs();
+						$employees = \App\Page::where('slug', 'starfsfolk')->first()->getSubs();
 
-					?>
+						?>
 
-					<div class="uk-grid" data-uk-grid-margin data-uk-grid-match="{target:'.inner'}">
-						@foreach($employees as $k => $employee)
-							<div class="uk-width-medium-1-3 uk-width-small-1-2">
-								<div class="inner">
-									<a href="/um-okkur/starfsfolk/{{ $employee->slug }}"><img src="/imagecache/profile/{{ $employee->img()->first() }}" /><br>
-									<h3 class="uk-margin-small-top" style="margin-bottom: 0; padding-bottom: 0;">{{ $employee->title }}</h3></a>
-									{{ $employee->subtitle ?: 'Starfstitill' }}
+						<div class="uk-grid" data-uk-grid-margin data-uk-grid-match="{target:'.inner'}">
+							@foreach($employees as $k => $employee)
+								<div class="uk-width-medium-1-3 uk-width-small-1-2">
+									<div class="inner">
+										<a href="/um-okkur/starfsfolk/{{ $employee->slug }}"><img src="/imagecache/profile/{{ $employee->img()->first() }}" /><br>
+										<h3 class="uk-margin-small-top" style="margin-bottom: 0; padding-bottom: 0;">{{ $employee->title }}</h3></a>
+										{{ $employee->subtitle ?: 'Starfstitill' }}
+									</div>
 								</div>
-							</div>
-						@endforeach
-					</div>
+							@endforeach
+						</div>
+					</article>
 				@elseif(\Request::is('um-okkur/starfsfolk/*'))
 					<article>
 						<header>

@@ -18,7 +18,7 @@ class Page extends Formable
 
     protected $table = 'pages';
 
-    protected $fillable = ['banner', 'blade_view', 'topmenu', 'accordion', 'path', 'hlutur', 'title', 'subtitle', 'content', 'slug', 'parent_id', 'images', 'translations', 'order', 'status', 'url', 'files'];
+    protected $fillable = ['banner', 'blade_view', 'topmenu', 'accordion', 'path', 'hlutur', 'title', 'subtitle', 'content', 'slug', 'parent_id', 'images', 'translations', 'order', 'menu', 'status', 'url', 'files'];
 
     public $translatable = [
         'title',
@@ -53,7 +53,14 @@ class Page extends Formable
     }
 
 
-
+    public function updateSpecial($request) {
+        dd($request);
+        
+        if( ! $request->get('menu')) {
+            $this->menu = '';
+            $this->save();
+        }
+    }
     
 
 
@@ -97,11 +104,11 @@ class Page extends Formable
             'type' => 'text',
             'name' => 'subtitle'
         ],
-        /*[
-            'title' => 'Birta í "accordion" í efni foreldris',
+        [
+            'title' => 'Birta undirhluti í valmynd',
             'type' => 'checkbox',
-            'name' => 'accordion'
-        ],*/
+            'name' => 'menu'
+        ],
         [
             'title' => 'Linkur',
             'type' => 'text',
