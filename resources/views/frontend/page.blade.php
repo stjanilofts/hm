@@ -32,7 +32,7 @@
 						@foreach($employees as $k => $employee)
 							<div class="uk-width-medium-1-3 uk-width-small-1-2">
 								<div class="inner">
-									<a href="/um-okkur/starfsfolk/{{ $employee->slug }}"><img src="/imagecache/article/<?=$k + 1?>.jpg" /><br>
+									<a href="/um-okkur/starfsfolk/{{ $employee->slug }}"><img src="/imagecache/article/{{ $employee->img()->first() }}" /><br>
 									<h3 class="uk-margin-small-top" style="margin-bottom: 0; padding-bottom: 0;">{{ $employee->title }}</h3></a>
 									{{ $employee->subtitle ?: 'Starfstitill' }}
 								</div>
@@ -51,7 +51,6 @@
 							</div>
 							<div class="uk-width-medium-2-3">
 								{!! cmsContent($page) !!}
-								</div>
 							</div>
 						</div>
 					</article>
