@@ -579,7 +579,7 @@ function addSlider($item) {
 
 
 function myTest($item) {
-    $content = $item->translation('content');
+    $content = $item->content;
 
     $pattern = '/!myndir\((.*?)\)/';
 
@@ -672,8 +672,8 @@ function myTest($item) {
 
 
 function cmsContent($item) {
-    $item->content = $content = myTest($item);
     $item->content = $content = filterImages($item);
+    $item->content = $content = myTest($item);
     $item->content = $content = addSlider($item);
     return $content;
 }
