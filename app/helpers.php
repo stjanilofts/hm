@@ -577,10 +577,105 @@ function addSlider($item) {
 
 
 
+
+function myTest($item) {
+    $content = $item->translation('content');
+
+    $pattern = '/!myndir\((.*?)\)/';
+
+    while(preg_match($pattern, $content, $matches)) {
+        $pics = [];
+        $idxs = [];
+
+        $string = $matches[1];
+
+        if($string) {
+            if(strpos($string, ',')) {
+                $idxs = explode(',', $string);
+            }
+        }
+
+        if(empty($idxs)) {
+            $idxs[] = $string;
+        }
+
+        if(!empty($idxs)) {
+            foreach($idxs as $idx) {
+                $ctx = trim(preg_replace('/\s+/', '', $idx));
+                $ctx = trim(str_replace('&nbsp;', '', $ctx));
+
+                if(strpos($ctx, '-')) {
+                    $e = explode('-', $ctx);
+
+                    if($e[0] < $e[1]) {
+                        for($i = $e[0]; $i <= $e[1]; $i++) {
+                            $pics[] = (int)$i;
+                        }
+                    }
+                } else {
+                    if(is_numeric($ctx)) {
+                        $pics[] = (int)$ctx;
+                    }
+                }
+            }        
+        }
+       
+        $html = '';
+
+        if($item->img()->exists()) {
+            $html = '<div class="myndir uk-margin-large-top uk-margin-large-bottom">';
+
+                $html .= '<div class="uk-grid" data-uk-grid-margin data-uk-grid-watch="{target:\'.myndir-mynd\'}">';
+
+                foreach($pics as $pic) {
+                    $img = $item->img()->nr($pic);
+
+                    $html .= '<div class="uk-width-medium-1-3 uk-flex uk-flex-middle uk-flex-center"><div class="myndir-mynd uk-height-1-1 uk-flex uk-flex-middle uk-flex-center"><a data-uk-lightbox href="/imagecache/original/'.$img.'"><img src="/imagecache/medium/'.$img.'" /></a></div></div>';
+                }
+
+                $html .= '</div>';
+
+            $html .= '</div><div class="uk-clearfix"></div>';
+        }
+
+        $content = preg_replace('/!myndir\((.*?)\)/', $html, $content, 1);
+    }
+
+    return $content;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function cmsContent($item) {
     $item->content = filterImages($item);
-    $content = addSlider($item);
-    return $content;
+    $item->content = myTest($item);
+    $item->content = addSlider($item);
+    return $item->content;
 }
 
 
