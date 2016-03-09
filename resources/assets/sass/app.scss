@@ -228,7 +228,7 @@ a {
 		}
 
 		li {
-			&.active {
+			&.being_viewed {
 				a {
 					color: $green2;
 				}
@@ -509,7 +509,7 @@ header {
 				}
 
 				&.active {
-					a {
+					> a {
 						color: $green2;
 					}
 				}
@@ -557,6 +557,10 @@ header {
 		figure {
 			width: 100%;
 			display: block;
+
+			img {
+				width: 100%;
+			}
 
 			&.righter, &.lefter {
 				max-width: 50%;

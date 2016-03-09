@@ -672,10 +672,10 @@ function myTest($item) {
 
 
 function cmsContent($item) {
-    $item->content = filterImages($item);
-    $item->content = myTest($item);
-    $item->content = addSlider($item);
-    return $item->content;
+    $item->content = $content = myTest($item);
+    $item->content = $content = filterImages($item);
+    $item->content = $content = addSlider($item);
+    return $content;
 }
 
 
@@ -911,10 +911,16 @@ function renderSitemap($items = false, $args = []) {
 
 function kalMenuBasicFrom($slug = '') {
     $page = App\Page::where('slug', $slug)->first();
-    return kalMenuBasic($page->id, $lvl = 1);
+    return kalMenuBasic(['max_lvl' => 2], $page->id, $lvl = 2);
 }
 
-function kalMenuBasic($parent_id = 0, $lvl = 0, $all = false) {
+function kalMenuBasic($options = [], $parent_id = 0, $lvl = 1) {
+    $default_options = [
+        'max_lvl' => false
+    ];
+
+    $opts = array_merge($default_options, $options);
+
     $cats = \App\Page::where('parent_id', $parent_id)->get();
 
     if( ! $cats) return;
@@ -950,9 +956,12 @@ function kalMenuBasic($parent_id = 0, $lvl = 0, $all = false) {
 
         $output .= '<li class="'.$class.'"><a href="/'.$fullpath.'"><span>'.$cat->title.'</span></a>';
 
-        if($all || ($isActive && $cat->hasSubs())) {
+        /*echo $lvl.' '.$opts['max_lvl'].'<br>';
+        echo ($opts['max_lvl'] && $lvl <= $opts['max_lvl']) ? 'true' : 'false'.'<br>';*/
+
+        if(($opts['max_lvl'] && $lvl <= $opts['max_lvl']) && ($isActive && $cat->hasSubs())) {
             $lvl++;
-            $output .= kalMenuBasic($cat->id, $lvl, $all);
+            $output .= kalMenuBasic($opts, $cat->id, $lvl);
             $lvl--;
         }
 

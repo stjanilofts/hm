@@ -28,7 +28,7 @@
         <div class="overlay-menu"> 
             <div class="uk-flex uk-flex-middle uk-flex-center uk-height-viewport">
                 <div class="overlay-menu-ul">
-                    {!! kalMenuBasic() !!}
+                    {!! kalMenuBasic(['max_lvl' => 0]) !!}
                     <!--<ul>
                         <li><a href="#">Heim</a></li>
                         <li><a href="/um-okkur/">Um okkur</a></li>

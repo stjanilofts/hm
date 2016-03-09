@@ -198,7 +198,7 @@ a {
       padding: 0;
       margin: 0;
       list-style: none; }
-    .overlay-menu .overlay-menu-ul li.active a {
+    .overlay-menu .overlay-menu-ul li.being_viewed a {
       color: #33956B; }
     .overlay-menu .overlay-menu-ul li a {
       color: #231f20;
@@ -422,7 +422,7 @@ header {
           .page .submenu ul li a:hover {
             text-decoration: none;
             color: #646464; }
-        .page .submenu ul li.active a {
+        .page .submenu ul li.active > a {
           color: #33956B; }
         .page .submenu ul li ul {
           padding-left: 1rem;
@@ -446,6 +446,8 @@ header {
     .page article figure {
       width: 100%;
       display: block; }
+      .page article figure img {
+        width: 100%; }
       .page article figure.righter, .page article figure.lefter {
         max-width: 50%;
         margin-top: 1rem;
