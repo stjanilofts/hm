@@ -57,25 +57,19 @@
                 </div>
             </div>
 
-            <?php
-
-            $subs = getContentBySlug('_forsidumyndir')->getSubs();
-
-            ?>
-
             <div class="uk-slidenav-position uk-overlay-active" data-uk-slideshow="{ autoplay: true, autoplayInterval: 5000, pauseOnHover: false }">
                 <ul class="uk-slideshow {{ (frontpage() ? 'frontpage' : 'subpage') }}">
-                    @foreach($subs as $sub)
-                        <li style="background: url('/imagecache/banner/{{ $sub->img()->first() }}') center center no-repeat; background-size: cover;">
+                    @foreach($forsidumyndir as $forsidumynd)
+                        <li style="background: url('/imagecache/banner/{{ $forsidumynd->img()->first() }}') center center no-repeat; background-size: cover;">
                             @if(frontpage())
                                 <div class="slideshow-overlay-content uk-overlay-panel uk-overlay-background uk-overlay-fade uk-flex uk-flex-center uk-flex-middle uk-text-center">
                                     <div class="uk-animation-slide-bottom uk-animation-fade">
                                         <div>
-                                            {!! cmsContent($sub->content) !!}
+                                            {!! cmsContent($forsidumynd->content) !!}
                                         </div>
 
                                         <div class="uk-margin-large-top uk-display-block">
-                                            <a class="takki" href="{{ $sub->subtitle }}">Lesa meira<i class="uk-icon-caret-right uk-margin-left"></i></a>
+                                            <a class="takki" href="{{ $forsidumynd->subtitle }}">Lesa meira<i class="uk-icon-caret-right uk-margin-left"></i></a>
                                         </div>
                                     </div>
                                 </div>

@@ -10,9 +10,9 @@ use App\Http\Controllers\Controller;
 class HomeController extends Controller
 {
     public function home() {
-        //$data['forsidumyndir'] = \App\Page::where('slug', '_forsidumyndir')->first()->getSubs();
+        $data['forsidumyndir'] = \App\Page::where('slug', '_forsidumyndir')->first()->getSubs();
 
-        $cats   = \App\Category::where('status', 1)->get();
+        /*$cats   = \App\Category::where('status', 1)->get();
         $prods  = \App\Product::where('status', 1)->get();
 
         $items = [$cats, $prods];
@@ -45,7 +45,7 @@ class HomeController extends Controller
             return $a['frontpaged'] < $b['frontpaged'] ? -1 : 1;
         });
 
-        $data['kubbar'] = $kubbar;
+        $data['kubbar'] = $kubbar;*/
 
         return view('frontend.layout')->with($data);
     }
