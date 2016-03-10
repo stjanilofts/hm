@@ -682,7 +682,7 @@ function cmsContent($item) {
 
 
 function filterImages($item) {
-    $content = $item->content;
+    $content = $item->translation('content');
     $newContent = $content;
 
     $imgs = array();

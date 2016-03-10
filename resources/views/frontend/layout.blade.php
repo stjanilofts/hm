@@ -65,7 +65,7 @@
                                 <div class="slideshow-overlay-content uk-overlay-panel uk-overlay-background uk-overlay-fade uk-flex uk-flex-center uk-flex-middle uk-text-center">
                                     <div class="uk-animation-slide-bottom uk-animation-fade">
                                         <div>
-                                            {!! cmsContent($forsidumynd->content) !!}
+                                            {!! $forsidumynd->content !!}
                                         </div>
 
                                         <div class="uk-margin-large-top uk-display-block">
