@@ -944,6 +944,8 @@ function kalMenuBasic($options = [], $parent_id = 0, $lvl = 1) {
     }
 
     foreach($cats as $cat) {
+        if ($cat->slug[0] == '_') continue;
+
         $fullpath = $cat->fullpath();
 
         $class = 'lvl-'.$lvl.' ';
