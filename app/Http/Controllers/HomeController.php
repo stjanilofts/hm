@@ -10,8 +10,6 @@ use App\Http\Controllers\Controller;
 class HomeController extends Controller
 {
     public function home() {
-        $data['forsidumyndir'] = \App\Page::where('slug', '_forsidumyndir')->first()->getSubs();
-
         /*$cats   = \App\Category::where('status', 1)->get();
         $prods  = \App\Product::where('status', 1)->get();
 
@@ -47,7 +45,7 @@ class HomeController extends Controller
 
         $data['kubbar'] = $kubbar;*/
 
-        return view('frontend.layout')->with($data);
+        return view('frontend.layout');
     }
 }
 

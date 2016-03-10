@@ -57,6 +57,12 @@
                 </div>
             </div>
 
+            <?php
+
+            $forsidumyndir = \App\Page::where('slug', '_forsidumyndir')->first()->getSubs();
+
+            ?>
+
             <div class="uk-slidenav-position uk-overlay-active" data-uk-slideshow="{ autoplay: true, autoplayInterval: 5000, pauseOnHover: false }">
                 <ul class="uk-slideshow {{ (frontpage() ? 'frontpage' : 'subpage') }}">
                     @foreach($forsidumyndir as $forsidumynd)
