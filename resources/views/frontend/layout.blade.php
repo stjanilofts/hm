@@ -71,7 +71,7 @@
                                 <div class="slideshow-overlay-content uk-overlay-panel uk-overlay-background uk-overlay-fade uk-flex uk-flex-center uk-flex-middle uk-text-center">
                                     <div class="uk-animation-slide-bottom uk-animation-fade">
                                         <div>
-                                            {!! $forsidumynd->content !!}
+                                            <h2>{{ trim(strip_tags($forsidumynd->content)) }}</h2>
                                         </div>
 
                                         <div class="uk-margin-large-top uk-display-block">
