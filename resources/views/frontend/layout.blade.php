@@ -4,9 +4,19 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-        <title>{{ config('formable.site_title') }}{{ isset($pagetitle) ? ' | '.$pagetitle : '' }}</title>
+        <title>{{ config('formable.site_title') }}{{ isset($seo) ? ' | '.$seo->title : '' }}</title>
 
-        <meta name="description" content="">
+        <meta property="fb:app_id" content="738490796251978">
+        <meta property="og:title" content="{{ isset($seo) ? $seo->title : config('formable.site_title') }}">
+        <meta property="og:type" content="website">
+        <meta name="description" content="{{ isset($seo) ? shortenCmsClean($seo) : config('formable.site_description') }}">
+        <meta property="og:description" content="{{ isset($seo) ? shortenCmsClean($seo) : config('formable.site_description') }}">
+        <meta property="og:url" content="{{ \Request::root() .'/'. \Request::path() }}">
+        <meta property="og:image" content="{{ \Request::root() }}/imagecache/facebook/{{ isset($seo) ? ($seo->img()->first() == 'spurningamerki.jpg' ? 'facebook.jpg' : $seo->img()->first()) : 'facebook.jpg' }}">
+        <meta property="og:image:width" content="600">
+        <meta property="og:image:height" content="315">
+
+        <meta name="description" content="{{ isset($seo) ? shortenCmsClean($seo) : config('formable.site_description') }}">
         <meta name="keywords" content="">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,6 +35,24 @@
         </script>
     </head>
     <body>
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '1575607712765932',
+              xfbml      : true,
+              version    : 'v2.5'
+            });
+          };
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/is_IS/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'facebook-jssdk'));
+        </script>
+
         <div class="overlay-menu"> 
             <div class="uk-flex uk-flex-middle uk-flex-center uk-height-viewport">
                 <div class="overlay-menu-ul">

@@ -44,6 +44,10 @@
 								</div>
 							@endforeach
 						</div>
+
+						<div class="uk-margin-top">
+							<div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+						</div>
 					</article>
 				@elseif(\Request::is('um-okkur/starfsfolk/*'))
 					<article>
@@ -58,6 +62,10 @@
 							<div class="uk-width-medium-2-3">
 								{!! cmsContent($page) !!}
 							</div>
+						</div>
+
+						<div class="uk-margin-top">
+							<div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 						</div>
 					</article>
 				@else
@@ -75,6 +83,10 @@
 								@include('frontend.forms.contact')
 							</div>
 						@endif
+						
+						<div class="uk-margin-top">
+							<div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+						</div>
 					</article>
 				@endif
 			</div>
