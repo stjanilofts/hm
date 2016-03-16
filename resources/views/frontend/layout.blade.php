@@ -29,16 +29,6 @@
             <div class="uk-flex uk-flex-middle uk-flex-center uk-height-viewport">
                 <div class="overlay-menu-ul">
                     {!! kalMenuBasic(['max_lvl' => 0]) !!}
-                    <!--<ul>
-                        <li><a href="#">Heim</a></li>
-                        <li><a href="/um-okkur/">Um okkur</a></li>
-                        <li><a href="#">Sjúkratryggingar</a></li>
-                        <li><a href="#">Rannsóknir</a></li>
-                        <li><a href="#">Hjartasjúkdómar</a></li>
-                        <li><a href="#">Rannsókn eftir hjartaáfall</a></li>
-                        <li><a href="#">Hafa samband</a></li>
-                        <li class="bg-grey2-transparent border-radius uk-margin-large-top"><a class="overlay-menu-close"><i class="uk-icon-close uk-margin-right"></i>Loka</a></li>
-                    </ul>-->
                 </div>
             </div>
         </div>
