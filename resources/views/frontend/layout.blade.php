@@ -6,7 +6,7 @@
 
         <title>{{ config('formable.site_title') }}{{ isset($seo) ? ' | '.$seo->title : '' }}</title>
 
-        <meta property="fb:app_id" content="738490796251978">
+        <meta property="fb:app_id" content="1575607712765932">
         <meta property="og:title" content="{{ isset($seo) ? $seo->title : config('formable.site_title') }}">
         <meta property="og:type" content="website">
         <meta name="description" content="{{ isset($seo) ? shortenCmsClean($seo) : config('formable.site_description') }}">
