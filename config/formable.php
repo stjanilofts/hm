@@ -7,9 +7,9 @@ return [
     'site_description' => 'Hjartamiðstöðin ehf | Holtasmári 1, 6. hæð | 201 Kópavogur | Sími 550 3030 | Fax 550 3039',
 
     'company_name' => 'Hjartamiðstöðin',
-    'company_email' => 'hjartamidstodin@hjartamidstodin.is',
+    'company_email' => 'afgreidsla@hjartamidstodin.is',
 
-    'email' => 'hjartamidstodin@hjartamidstodin.is',
+    'email' => 'afgreidsla@hjartamidstodin.is',
     
     /*
     |--------------------------------------------------------------------------
